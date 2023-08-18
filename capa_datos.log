@@ -11,3 +11,6 @@
 11:15:09 AM:INFO [menu_app_usuario.py:17] Usuario: 1, aaa, aaa
 11:15:09 AM:INFO [menu_app_usuario.py:17] Usuario: 2, bbb, bbb
 11:15:11 AM:INFO [menu_app_usuario.py:19] Saliendo del programa
+11:26:39 AM:INFO [menu_app_usuario.py:28] Saliendo del programa
+11:27:21 AM:INFO [menu_app_usuario.py:25] Usuario insertado: 1
+11:27:35 AM:INFO [menu_app_usuario.py:28] Saliendo del programa
