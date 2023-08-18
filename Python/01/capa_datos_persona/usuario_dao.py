@@ -1,14 +1,9 @@
-# LABORATORIO IV - CLASE 1 - 15/08/2023
 from capa_datos_persona.Usuario import Usuario
 from capa_datos_persona.cursor_del_pool import CursorDelPool
 from logger_base import log
 
 
 class UsuarioDAO:
-    '''
-    DAO -> Data Access Object para la tabla de usuario
-    CRUD -> Create, Read, Update, Delete
-    '''
 
     _SELECT = 'SELECT * FROM usuario ORDER BY id_usuario'
     _INSERTAR = 'INSERT INTO usuario(username, password) VALUES (%s, %s)'
@@ -50,8 +45,3 @@ class UsuarioDAO:
             valores = (usuario.id_usuario,)
             cursor.execute(cls._ELIMINAR, valores)
             return cursor.rowcount
-
-
-
-
-
