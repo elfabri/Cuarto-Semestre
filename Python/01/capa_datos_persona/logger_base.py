@@ -4,7 +4,7 @@ log.basicConfig(level=log.INFO,
                 format="%(asctime)s:%(levelname)s [%(filename)s:%(lineno)s] %(message)s",
                 datefmt="%I:%M:%S %p",
                 handlers=[
-                    log.FileHandler("capa_datos.log"),
+                    log.FileHandler("Python/01/capa_datos_persona/capa_datos.log"),
                     log.StreamHandler()
                     ])
 
