@@ -1,0 +1,31 @@
+11:11:12 AM:DEBUG [cursor_del_pool.py:11] Inicio del método with y __enter__
+11:11:12 AM:DEBUG [conexion.py:37] Creación de pool exitosa: <psycopg2.pool.SimpleConnectionPool object at 0x000002348E3AEA90>
+11:11:12 AM:DEBUG [conexion.py:19] Conexión obtenida del pool: <connection object at 0x0000023490161250; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+11:11:12 AM:DEBUG [usuario_dao.py:16] Seleccionando usuarios
+11:11:12 AM:DEBUG [cursor_del_pool.py:17] Se ejecuta el método exit
+11:11:12 AM:DEBUG [cursor_del_pool.py:25] Commit de la transacción
+11:11:12 AM:DEBUG [conexion.py:48] Regresamos la conexión del pool: <connection object at 0x0000023490161250; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+11:11:12 AM:INFO [menu_app_usuario.py:17] Usuario: 1, aaa, aaa
+11:11:12 AM:INFO [menu_app_usuario.py:17] Usuario: 2, bbb, bbb
+11:11:19 AM:INFO [menu_app_usuario.py:19] Saliendo del programa
+11:15:09 AM:INFO [menu_app_usuario.py:17] Usuario: 1, aaa, aaa
+11:15:09 AM:INFO [menu_app_usuario.py:17] Usuario: 2, bbb, bbb
+11:15:11 AM:INFO [menu_app_usuario.py:19] Saliendo del programa
+11:26:39 AM:INFO [menu_app_usuario.py:28] Saliendo del programa
+11:27:21 AM:INFO [menu_app_usuario.py:25] Usuario insertado: 1
+11:27:35 AM:INFO [menu_app_usuario.py:28] Saliendo del programa
+11:47:27 AM:INFO [logger_base.py:14] Mensaje a nivel info
+11:47:27 AM:WARNING [logger_base.py:15] Mensaje a nivel warning
+11:47:27 AM:ERROR [logger_base.py:16] Mensaje a nivel error
+11:47:27 AM:CRITICAL [logger_base.py:17] Mensaje a nivel critical
+11:47:59 AM:INFO [menu_app_usuario.py:18] Usuario: 1, aaa, aaa
+11:47:59 AM:INFO [menu_app_usuario.py:18] Usuario: 2, bbb, bbb
+11:47:59 AM:INFO [menu_app_usuario.py:18] Usuario: 3, cccccc, cccccc
+11:48:28 AM:INFO [menu_app_usuario.py:35] Usuario actualizado: 1
+11:48:30 AM:INFO [menu_app_usuario.py:18] Usuario: 1, aaa, aaa
+11:48:30 AM:INFO [menu_app_usuario.py:18] Usuario: 2, bbb, bbb
+11:48:30 AM:INFO [menu_app_usuario.py:18] Usuario: 3, ccc, ccc
+11:50:33 AM:INFO [menu_app_usuario.py:45] Saliendo del programa
+11:52:15 AM:INFO [usuario_dao.py:71] Usuario: 1, aaa, aaa
+11:52:15 AM:INFO [usuario_dao.py:71] Usuario: 2, bbb, bbb
+11:52:15 AM:INFO [usuario_dao.py:71] Usuario: 3, ccc, ccc
