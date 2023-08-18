@@ -12,3 +12,4 @@ Java/*/*/target/test-classes/*
 Java/*/*/src/test/*
 
 .idea/
+__pycache__/
