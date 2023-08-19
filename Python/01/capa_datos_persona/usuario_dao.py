@@ -49,7 +49,7 @@ class UsuarioDAO:
 if __name__ == "__main__":
     # eliminar usuario
     usuario = Usuario(id_usuario=3)
-    usuario_eliminado = UsuarioDAO.elimianar(usuario)
+    usuario_eliminado = UsuarioDAO.eliminar(usuario)
     log.debug(f"Usuario eliminado: {usuario_eliminado}")
 
     # actualizar usuario
@@ -65,4 +65,4 @@ if __name__ == "__main__":
     # listar
     usuarios = UsuarioDAO.seleccionar()
     for usuario in usuarios:
-        log.debug(usuario)
+        log.info(usuario)
