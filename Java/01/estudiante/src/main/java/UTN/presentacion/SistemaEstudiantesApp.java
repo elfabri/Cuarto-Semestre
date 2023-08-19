@@ -1,6 +1,5 @@
 package UTN.presentacion;
 
-import UTN.conexion.Conexion;
 import UTN.datos.EstudianteDao;
 import UTN.dominio.Estudiante;
 
@@ -77,7 +76,7 @@ public class SistemaEstudiantesApp {
                 if (agre) {
                     System.out.println("Estudiante agregado: " + est);
                 } else {
-                    System.out.println("Estudiante NO agregado " + est);
+                    System.out.println("Estudiante NO agregado: " + est);
                 }
             } case 4 -> {
                 System.out.println("Modificar estudiante:");
@@ -102,7 +101,7 @@ public class SistemaEstudiantesApp {
                 if (mod) {
                     System.out.println("Estudiante modificado: " + est);
                 } else {
-                    System.out.println("Estudiante NO modificado " + est);
+                    System.out.println("Estudiante NO modificado: " + est);
                 }
 
             } case 5 -> {  // Eliminar
@@ -115,10 +114,13 @@ public class SistemaEstudiantesApp {
                 if (elim) {
                     System.out.println("Estudiante eliminado: " + est);
                 } else {
-                    System.out.println("Estudiante NO eliminado " + est);
+                    System.out.println("Estudiante NO eliminado: " + est);
                 }
-            }
-            // case 3 -> {}
+            } case 6 -> {
+                System.out.println("Saliendo del programa");
+                salir = true;
+            } default -> System.out.println("Opción inválida");
         }
+        return salir;
     }
 }
