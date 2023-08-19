@@ -52,7 +52,7 @@ public class SistemaEstudiantesApp {
                 var encontrado = estudianteDao.buscarEstPorId(est);
 
                 if (encontrado) {
-                    System.out.println("Estudiante encontrado!");
+                    System.out.println("Estudiante encontrado: " + est);
                 } else {
                     System.out.println("Estudiante NO encontrado");
                 }
