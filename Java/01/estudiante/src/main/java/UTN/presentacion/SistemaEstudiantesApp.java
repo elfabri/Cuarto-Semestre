@@ -23,10 +23,29 @@ public class SistemaEstudiantesApp {
     }
 
     private static void mostrarMenu() {
-        System.out.println("""
+        System.out.print("""
                 *** Sis Est ***
-                
-                
-                """;)
+                1. Listar
+                2. Buscar
+                3. Agregar
+                4. Modificar
+                5. Eliminar
+                6. Salir
+
+                Ingrese opción:
+                """);
+    }
+    
+    private static boolean ejecutarOp(Scanner consola, EstudianteDao estudianteDao) {
+        var opcion = Integer.parseInt(consola.nextLine());
+        var salir = false;
+        switch (opcion) {
+            case 1 -> {
+                System.out.println("Listando estudiantes...");
+                var estudiantes = estudianteDao.listarEstudiantes();
+                estudiantes.forEach(System.out::println);
+                return salir;
+            }
+        }
     }
 }
