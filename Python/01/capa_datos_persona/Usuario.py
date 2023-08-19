@@ -5,7 +5,7 @@ class Usuario:
         self._password = pw
 
     def __str__(self):
-        return f"Usuario: {self._id_usuario}, {self._username}, {self._username}"
+        return f"Usuario: {self._id_usuario}, {self._username}, {self._password}"
 
     # Metodos get y set
     @property
