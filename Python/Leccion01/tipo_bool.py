@@ -1,10 +1,9 @@
 # True or False
-# 0 -> false
+# 0 -> False
 
 valor = 0.0
 resultado = bool(valor)
 print(f"valor: {valor}, resultado: {resultado}")
-
 
 valor = 0.1
 resultado = bool(valor)
@@ -21,3 +20,12 @@ uwu(-1)
 uwu((0,0))
 uwu(0.0)
 """
+
+# Str "" -> False
+valor = ""
+resultado = bool(valor)
+print(f"valor: {valor}, resultado: {resultado}")
+
+valor = "hola"
+resultado = bool(valor)
+print(f"valor: {valor}, resultado: {resultado}")
