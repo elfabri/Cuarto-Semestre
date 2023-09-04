@@ -1,3 +1,5 @@
+from math import isnan
+
 # Profundizando en el tipo String
 # Concatenación automática
 
@@ -7,4 +9,4 @@ mensaje += ", Terminamos"
 print(mensaje)
 
 # Usamos help para documentación
-help(str)
+help(isnan)
