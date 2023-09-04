@@ -63,3 +63,11 @@ if (1,):
     print("Regresa Verdaero")
 else:
     print("Regresa Falso")
+
+# ciclos
+variable = 17
+while variable:
+    print("Regresa Verdaero")
+    break
+else:
+    print("Regresa Falso")
