@@ -50,6 +50,7 @@ const displayCart = () => {
         `
         modalContainer.append(modalBody);
 
+        // decrease product
         const d = modalBody.querySelector(".quantity-btn-decrease");
         d.addEventListener("click", () => {
             if (p.quantity !== 1) {
@@ -58,10 +59,17 @@ const displayCart = () => {
             }
         })
 
+        // increase product
         const i = modalBody.querySelector(".quantity-btn-increase");
         i.addEventListener("click", () => {
             p.quantity++;
             displayCart();
+        })
+
+        // delete product
+        const dP = modalBody.querySelector(".delete-product");
+        dP.addEventListener("click", () => {
+            deleteCartProduct(p.id);
         })
     })
 
@@ -79,3 +87,9 @@ const displayCart = () => {
 }
 
 cartBtn.addEventListener("click", displayCart);
+
+const deleteCartProduct = (id) => {
+    const fId = cart.findIndex((elem) => elem.id === id);
+    cart.splice(fId, 1);
+    displayCart();
+}
