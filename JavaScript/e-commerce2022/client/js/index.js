@@ -16,13 +16,21 @@ productos.forEach((product) => {
     content.append(buyButton);
 
     buyButton.addEventListener("click", () => {
-        cart.push({
-            id: product.id,
-            productName: product.productName,
-            price: product.price,
-            quantity: product.quantity,
-            img: product.img,
-        })
+        const repeat = cart.some((prodRepe) => prodRepe.id === product.id);
+
+        if (repeat) {
+            cart.map((p) => {
+                if (p.id === product.id) {p.quantity++};
+            })
+        } else {
+            cart.push({
+                id: product.id,
+                productName: product.productName,
+                price: product.price,
+                quantity: product.quantity,
+                img: product.img,
+            })
+        }
         console.log(cart);
     })
 });
