@@ -47,8 +47,22 @@ const displayCart = () => {
             <div class="price">$ ${p.price * p.quantity}</div>
             <div class="delete-product">X</div>
         </div>
-        `;
+        `
         modalContainer.append(modalBody);
+
+        const d = modalBody.querySelector(".quantity-btn-decrease");
+        d.addEventListener("click", () => {
+            if (p.quantity !== 1) {
+                p.quantity--;
+                displayCart();
+            }
+        })
+
+        const i = modalBody.querySelector(".quantity-btn-increase");
+        i.addEventListener("click", () => {
+            p.quantity++;
+            displayCart();
+        })
     })
 
     // Modal footer
