@@ -20,7 +20,7 @@ productos.forEach((product) => {
             id: product.id,
             productName: product.productName,
             price: product.price,
-            quanty: product.quanty,  // Debería ser quantity creo
+            quantity: product.quantity,
             img: product.img,
         })
         console.log(cart);
