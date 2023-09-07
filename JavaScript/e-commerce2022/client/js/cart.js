@@ -48,10 +48,10 @@ const displayCart = () => {
             <div class="delete-product">X</div>
         </div>
         `
-        modalContainer.append(modalBody);
+        modalContainer.append(mB);
 
         // decrease product
-        const d = modalBody.querySelector(".quantity-btn-decrease");
+        const d = mB.querySelector(".quantity-btn-decrease");
         d.addEventListener("click", () => {
             if (p.quantity !== 1) {
                 p.quantity--;
@@ -60,14 +60,14 @@ const displayCart = () => {
         })
 
         // increase product
-        const i = modalBody.querySelector(".quantity-btn-increase");
+        const i = mB.querySelector(".quantity-btn-increase");
         i.addEventListener("click", () => {
             p.quantity++;
             displayCart();
         })
 
         // delete product
-        const dP = modalBody.querySelector(".delete-product");
+        const dP = mB.querySelector(".delete-product");
         dP.addEventListener("click", () => {
             deleteCartProduct(p.id);
         })
