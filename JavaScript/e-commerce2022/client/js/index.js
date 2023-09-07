@@ -31,6 +31,6 @@ productos.forEach((product) => {
                 img: product.img,
             })
         }
-        console.log(cart);
+        // console.log(cart);
     })
 });
