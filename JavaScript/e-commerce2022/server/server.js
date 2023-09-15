@@ -6,12 +6,13 @@ const path = require("path");
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
-	access_token: "<ACCESS_TOKEN>",
+	access_token: "",
 });
 
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 app.use(express.static(path.join(__dirname, "../client")));
 app.use(cors());
 
