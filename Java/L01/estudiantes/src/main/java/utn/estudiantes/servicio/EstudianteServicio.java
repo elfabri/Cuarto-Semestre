@@ -2,7 +2,6 @@ package utn.estudiantes.servicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import utn.estudiantes.modelo.Estudiante;
 import utn.estudiantes.repositorio.EstudianteRepositorio;
 
@@ -27,11 +26,11 @@ public class EstudianteServicio implements IEstudianteServicio {
 
     @Override
     public void guardarEstudiante(Estudiante estudiante) {
-
+        eR.save(estudiante);
     }
 
     @Override
     public void eliminarEstudiante(Estudiante estudiante) {
-
+        eR.delete(estudiante);
     }
 }
