@@ -26,7 +26,7 @@ public class EstudiantesApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Ejecutando run de spring");
+        logger.info(nl + "Ejecutando run de spring" + nl);
 
     }
 
