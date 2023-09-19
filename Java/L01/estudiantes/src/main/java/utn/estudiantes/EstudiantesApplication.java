@@ -92,6 +92,33 @@ public class EstudiantesApplication implements CommandLineRunner {
 
                 eS.guardarEstudiante(e);
                 logger.info("Estudiante agregado: " + e + nl);
+
+            } case 4 -> {  // Modificar
+                logger.info("Modificar Estudiante:"+nl);
+                logger.info("Ingrese id: ");
+                int id = Integer.parseInt(c.nextLine());
+                Estudiantes2022 e = eS.buscarEstudiantePorId(id);
+
+                if (e != null) {
+                    logger.info("Nombre: ");
+                    String nom = c.nextLine();
+                    logger.info("Apellido: ");
+                    String ap = c.nextLine();
+                    logger.info("Telefono: ");
+                    String tel = c.nextLine();
+                    logger.info("Email: ");
+                    String em = c.nextLine();
+
+                    e.setNombre(nom);
+                    e.setApellido(ap);
+                    e.setTelefono(tel);
+                    e.setEmail(em);
+
+                    eS.guardarEstudiante(e);
+                    logger.info("Estudiante modificado: " + e + nl);
+                } else {
+                    logger.info("Estudiante NO encontrado con el id: " + id + nl);
+                }
             }
         }
         return salir;
