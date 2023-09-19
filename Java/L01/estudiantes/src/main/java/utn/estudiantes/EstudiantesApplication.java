@@ -57,6 +57,7 @@ public class EstudiantesApplication implements CommandLineRunner {
     private boolean ejecutarOpciones(Scanner c){
         int opcion = Integer.parseInt(c.nextLine());
         boolean salir = false;
+
         switch (opcion) {
             case 1 -> {  // Listar estudiantes
                 logger.info(nl+"Listado de Estudiantes:"+nl);
@@ -119,7 +120,25 @@ public class EstudiantesApplication implements CommandLineRunner {
                 } else {
                     logger.info("Estudiante NO encontrado con el id: " + id + nl);
                 }
+            } case 5 -> {  // Eliminar
+                logger.info("Eliminar Estudiante:"+nl);
+                logger.info("Ingrese id: ");
+                int id = Integer.parseInt(c.nextLine());
+
+                Estudiantes2022 e = eS.buscarEstudiantePorId(id);
+
+                if (e != null) {
+                    eS.eliminarEstudiante(e);
+                    logger.info("Estudiante eliminado: " + e + nl);
+                } else {
+                    logger.info("Estudiante NO encontrado con el id: " + id + nl);
+                }
+            } case 6 -> {
+                logger.info("Saliendo del programa");
+                salir = true;
             }
+
+            default -> logger.info("Opción incorrecta: " + opcion + nl);
         }
         return salir;
     }
