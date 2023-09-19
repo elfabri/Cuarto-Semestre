@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import utn.estudiantes.modelo.Estudiante2022;
-import utn.estudiantes.servicio.EstudianteServicio;
+import java.util.List;
 import java.util.Scanner;
+import utn.estudiantes.modelo.Estudiantes2022;
+import utn.estudiantes.servicio.EstudianteServicio;
 
 @SpringBootApplication
 public class EstudiantesApplication implements CommandLineRunner {
@@ -51,6 +52,19 @@ public class EstudiantesApplication implements CommandLineRunner {
                 6. Salir
 
                 Ingrese opción: """);
+    }
+
+    private boolean ejecutarOpciones(Scanner c){
+        int opcion = Integer.parseInt(c.nextLine());
+        boolean salir = false;
+        switch (opcion) {
+            case 1 -> {  // Listar estudiantes
+                logger.info(nl+"Listado de Estudiantes:"+nl);
+                List<Estudiantes2022> estudiantes = eS.listarEstudiantes();
+                estudiantes.forEach((e -> logger.info(e.toString()+nl)));
+            }
+        }
+        return salir;
     }
 
 }
