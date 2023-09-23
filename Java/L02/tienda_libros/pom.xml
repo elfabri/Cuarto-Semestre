@@ -58,7 +58,7 @@
 		        <artifactId>exec-maven-plugin</artifactId>
 		        <version>1.6.0</version>
 		        <configuration>
-			        <mainClass>utn.estudiantes.EstudiantesApplication</mainClass>
+			        <mainClass>utn.tienda_libros.TiendaLibrosApplication</mainClass>
 		        </configuration>
             </plugin>
 		</plugins>
