@@ -1,10 +1,22 @@
 import {pool} from "../db.js";
 
-export const listarTareas = (req, res) => res.send("Obteniendo tareas");
+export const listarTareas = async (req, res) => {
+    const resultado = await pool.query("SELECT * FROM tareas;");
+    console.log(resultado);
+    return res.json(resultado.rows);
+}
 
-export const listarTarea = (req, res) => res.send("Obteniendo tarea única");
+export const listarTarea = async (req, res) => {
+    const resultado = await pool.query("SELECT * FROM tareas WHERE id = $1", [req.params.id]);
+    if (resultado.rowCount === 0) {
+        return res.status(404).json({
+            message: "La tarea no existe"
+        });
+    }
+    return res.json(resultado.rows[0]);
+}
 
-export const crearTarea = async(req, res) => {
+export const crearTarea = async(req, res, next) => {
     const { titulo, descripcion } = req.body;
 
     try {
@@ -14,7 +26,9 @@ export const crearTarea = async(req, res) => {
     } catch (e) {
 
         if (e.code === "23505") {
-            return res.send("Ya existe una tarea con ese titulo");
+            return res.status(409).json({
+                message: "Ya existe una tarea con ese titulo"
+            });
         }
         console.log(e);
         next(e);
