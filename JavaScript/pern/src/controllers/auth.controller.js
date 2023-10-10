@@ -51,6 +51,12 @@ export const signup = async (req, res) => {
     }
 }
 
-export const signout = (req, res) => res.send("Cerrando Sesión");
+export const signout = (req, res) => {
+    res.clearCookie("token");
+    return res.json({message: "Sesión cerrada"});
+}
 
-export const profile = (req, res) => res.send("Perfil de Usuario");
+export const profile = async (req, res) => {
+    const result = await pool.query("SELECT * FROM usuarios WHERE id = $1", [req.usuarioId]);
+    return res.json(result.rows[0]);
+}
