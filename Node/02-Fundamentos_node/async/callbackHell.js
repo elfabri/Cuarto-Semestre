@@ -24,7 +24,19 @@ console.log("Iniciando el programa");
 
 hola("carlos", function(nombre) {
 
-    adios(nombre, function() {
-        console.log("Finalizando el programa");
+    hablar( function() {
+
+        hablar( function() {
+
+            hablar( function() {
+
+                hablar( function() {
+
+                    adios(nombre, function() {
+                        console.log("Finalizando el programa");
+                    });
+                });
+            });
+        });
     });
 });
