@@ -1,4 +1,4 @@
-export default function Button({ children }) {
+export function Button({ children }) {
     return (
         <button className="relative inline-flex items-center gap-1.5 
         rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold
@@ -8,3 +8,5 @@ export default function Button({ children }) {
         disabled:cursor-not-allowed">{children}</button>
     )
 }
+
+export default Button;
