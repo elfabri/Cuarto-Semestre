@@ -7,7 +7,6 @@ import utn.tienda_libros.servicio.LibroServicio;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
@@ -24,6 +23,8 @@ public class LibroFrom extends JFrame {
     private JTextField precioTextoTextField;
     private JTextField existenciasTextoTextField;
     private JButton agregarButton;
+    private JButton modificarButton;
+    private JButton eliminarButton;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
@@ -33,7 +34,7 @@ public class LibroFrom extends JFrame {
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(e -> {
-                
+
             });
         });
     }
