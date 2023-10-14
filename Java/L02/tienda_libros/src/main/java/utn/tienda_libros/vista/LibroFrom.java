@@ -18,10 +18,10 @@ public class LibroFrom extends JFrame {
     LibroServicio libroServicio;
     private JLabel panel;
     private JTable tablaLibros;
-    private JTextField libroTextoTextField;
-    private JTextField autorTextoTextField;
-    private JTextField precioTextoTextField;
-    private JTextField existenciasTextoTextField;
+    private JTextField libroTexto;
+    private JTextField autorTexto;
+    private JTextField precioTexto;
+    private JTextField existenciasTexto;
     private JButton agregarButton;
     private JButton modificarButton;
     private JButton eliminarButton;
@@ -33,9 +33,7 @@ public class LibroFrom extends JFrame {
         iniciarForma();
         agregarButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(e -> {
-
-            });
+            public void actionPerformed(e -> agregarLibro());
         });
     }
 
@@ -53,6 +51,13 @@ public class LibroFrom extends JFrame {
         int x = (pantalla.width - getWidth()/2);
         int y = (pantalla.height - getHeight()/2);
         setLocation(x, y);
+    }
+
+    private void agregarLibro() {
+        // leer los valores del formulario
+        if (libroTexto.getText().equals("")) {
+            mostrarMensaje("Ingresa el nombre del libro");
+        }
     }
 
     private void createUIComponents() {
