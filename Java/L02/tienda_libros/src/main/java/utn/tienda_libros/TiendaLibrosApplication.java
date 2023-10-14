@@ -14,18 +14,17 @@ public class TiendaLibrosApplication {
 
 	public static void main(String[] args) {
 
-    ConfigurableApplicationContext contextoSpring =
-        new SpringApplicationBuilder(TiendaLibrosApplication.class)
-            .headless(false)
-            .web(WebApplicationType.NONE)
-            .run(args);
+        ConfigurableApplicationContext contextoSpring =
+            new SpringApplicationBuilder(TiendaLibrosApplication.class)
+                .headless(false)
+                .web(WebApplicationType.NONE)
+                .run(args);
 
-    // Ejecutamos para cargar el formulario
-    EventQueue.invokeLater(() -> {
-        // obtenemos objeto form a traves de spring
-        LibroFrom libroFrom = contextoSpring.getBean(LibroFrom.class);
-        libroFrom.setVisible(true);
-    });
+        // Ejecutamos para cargar el formulario
+        EventQueue.invokeLater(() -> {
+            // obtenemos objeto form a traves de spring
+            LibroFrom libroFrom = contextoSpring.getBean(LibroFrom.class);
+            libroFrom.setVisible(true);
+        });
 	}
-
 }

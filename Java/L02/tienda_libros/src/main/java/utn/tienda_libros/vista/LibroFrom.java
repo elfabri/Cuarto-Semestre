@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 @Component
 public class LibroFrom extends JFrame {
     LibroServicio libroServicio;
-    private JLabel panel;
+    private JPanel panel;
     private JTable tablaLibros;
     private JTextField libroTexto;
     private JTextField autorTexto;
@@ -32,10 +32,7 @@ public class LibroFrom extends JFrame {
     public LibroFrom(LibroServicio libSer) {
         this.libroServicio = libSer;
         iniciarForma();
-        agregarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(e -> agregarLibro());
-        });
+        agregarButton.addActionListener(e -> agregarLibro());
     }
 
     private void iniciarForma() {
@@ -64,15 +61,27 @@ public class LibroFrom extends JFrame {
 
         var nombre = libroTexto.getText();
         var autor = autorTexto.getText();
-        var precio = precioTexto.getText();
-        var existencias = existenciasTexto.getText();
+        var precio = Double.parseDouble(precioTexto.getText());
+        var existencias = Integer.parseInt(existenciasTexto.getText());
 
         // creamos objeto libro
-        var libro = new Libro();
-        libro.setNombreLibro(nombre);
-        libro.setAutor(autor);
-        libro.setPrecio(Double.parseDouble(precio));
-        libro.setExistencias(Integer.parseInt(existencias));
+        var libro = new Libro(null, nombre, autor, precio, existencias);
+        // libro.setNombreLibro(nombre);
+        // libro.setAutor(autor);
+        // libro.setPrecio(precio);
+        // libro.setExistencias(existencias);
+
+        this.libroServicio.guardarLibro(libro);
+        mostrarMensaje("Se agregó el libro");
+        limpiarFormulario();
+        listarLibros();
+    }
+
+    private void limpiarFormulario() {
+        libroTexto.setText("");
+        autorTexto.setText("");
+        precioTexto.setText("");
+        existenciasTexto.setText("");
     }
 
     private void mostrarMensaje(String msg) {
