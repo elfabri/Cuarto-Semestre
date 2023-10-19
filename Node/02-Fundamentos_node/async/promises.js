@@ -20,7 +20,8 @@ function adios(nom) {
     return new Promise((res, rej) => {
         setTimeout( function() {
             console.log("Adios " + nom);
-            res();
+            // res();
+            rej("hay un error");
         }, 1500);
     })
 }
@@ -34,4 +35,8 @@ hola("Ariel")
     .then(adios)
     .then((nombre) => {
         console.log("Terminando proceso");
+    })
+    .catch( e => {
+        console.log("Ha habido un error: ");
+        console.log(e);
     })
