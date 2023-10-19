@@ -93,6 +93,19 @@ public class LibroFrom extends JFrame {
 
        if (reglon != -1) {
            String idLibro = tablaLibros.getModel().getValueAt(reglon, 0).toString();
+           idTexto.setText(idLibro);
+
+           String nombreLibro = tablaLibros.getModel().getValueAt(reglon, 1).toString();
+           libroTexto.setText(nombreLibro);
+
+           String autor = tablaLibros.getModel().getValueAt(reglon, 2).toString();
+           autorTexto.setText(autor);
+
+           String precio = tablaLibros.getModel().getValueAt(reglon, 3).toString();
+           precioTexto.setText(precio);
+
+           String existencias = tablaLibros.getModel().getValueAt(reglon, 4).toString();
+           existenciasTexto.setText(existencias);
        }
     }
 
