@@ -7,11 +7,13 @@ function hola(nom) {
     })
 }
 
-function hablar(callbackHablar) {
-    setTimeout( function () {
-        console.log("bla bla bla");
-        callbackHablar();
-    }, 1000);
+function hablar(nombre) {
+    return new Promise((res, rej) => {
+        setTimeout( function () {
+            console.log("bla bla bla");
+            res(nombre);
+        }, 1000);
+    })
 }
 
 function adios(nom) {
@@ -26,6 +28,9 @@ function adios(nom) {
 // ejejej
 console.log("iniciando proceso");
 hola("Ariel")
+    .then(hablar)
+    .then(hablar)
+    .then(hablar)
     .then(adios)
     .then((nombre) => {
         console.log("Terminando proceso");
