@@ -46,6 +46,7 @@ public class LibroFrom extends JFrame {
         });
 
         modificarButton.addActionListener(e -> modificarLibro());
+        eliminarButton.addActionListener(e -> eliminarLibro());
     }
 
     private void iniciarForma() {
@@ -138,6 +139,25 @@ public class LibroFrom extends JFrame {
             limpiarFormulario();
             listarLibros();
         }
+    }
+
+    private void eliminarLibro() {
+        var reglon = tablaLibros.getSelectedRow();
+
+        if (reglon != -1) {
+            String idLibro = tablaLibros.getModel().getValueAt(reglon, 0).toString();
+
+            var libro = new Libro();
+            libro.setIdLibro(Integer.parseInt(idLibro));
+            libroServicio.eliminarLibro(libro);
+            mostrarMensaje("Libro " + idLibro + " ELIMINADO");
+            limpiarFormulario();
+            listarLibros();
+
+        } else {
+            mostrarMensaje("No se ha seleccionado ningun libro");
+        }
+
     }
 
     private void limpiarFormulario() {
